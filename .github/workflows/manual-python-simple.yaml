@@ -1,0 +1,13 @@
+name: Manual Python Simple
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: TODO
+        run: |
+          echo "TODO - Implement"
+
