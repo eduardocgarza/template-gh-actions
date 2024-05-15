@@ -1,0 +1,15 @@
+name: Environment Stages
+
+on: workflow_dispatch
+
+jobs:
+  Development:
+    runs-on: ubuntu-latest
+    environment: Env-Dev
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run Echo Script
+        run: |
+          echo "Running Development Environment"
+          echo "Environment Name: ${{ secrets.TEST_VAR }}"
