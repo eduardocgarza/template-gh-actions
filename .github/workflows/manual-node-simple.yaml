@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "Installing Dependencies"
           cd .github/supplementary/node-simple
-          npm run build
+          npm ci
           echo "Dependencies Installed"
 
       - name: Run Script
