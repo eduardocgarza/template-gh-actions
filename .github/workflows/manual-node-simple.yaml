@@ -1,0 +1,28 @@
+# Create Workflow to Run Node Script
+name: Manual Node Simple
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: |
+          echo "Installing Dependencies"
+          npm run build
+          echo "Dependencies Installed"
+
+      - name: Run Script
+        run: |
+          echo "Ready to Start Node App"
+          npm run start
+          echo "Node App Started"
