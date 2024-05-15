@@ -1,0 +1,13 @@
+name: Eduardo - Simple Manual Trigger
+
+# Defines that this workflow is triggered manually
+# Manual Trigger on Push, Pull Request, or Schedule
+on: [workflow_dispatch]
+
+jobs:
+  Run-Echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Message
+        run: echo "Hello, GitHub Actions!"
+

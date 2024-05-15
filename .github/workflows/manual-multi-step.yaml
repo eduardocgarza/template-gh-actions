@@ -1,0 +1,40 @@
+name: Eduardo - Multi-Step Manual Trigger
+
+# Defines that this workflow is triggered manually
+# Manual Trigger on Push, Pull Request, or Schedule
+on: [workflow_dispatch]
+
+jobs:
+  Run-Dev:
+    runs-on: ubuntu-latest
+    environment: Morita-Development
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Echo Message
+        run: | 
+          echo "Hello, GitHub Actions!"
+          echo "This is the Development Environment"
+      
+  Run-Staging:
+    runs-on: ubuntu-latest
+    needs: [Run-Dev]
+    environment: Morita-Staging
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Echo Message
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "This is the Staging Environment"
+  Run-Prod:
+    runs-on: ubuntu-latest
+    needs: [Run-Staging]
+    environment: Morita-Production
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Echo Message
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "This is the Production Environment"
