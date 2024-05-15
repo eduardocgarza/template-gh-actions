@@ -1,0 +1,13 @@
+name: Environment Stages
+
+on: [workflow_dispatch]
+
+jobs:
+  Development:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run Echo Script
+        run: |
+          echo "Running Development Environment"
