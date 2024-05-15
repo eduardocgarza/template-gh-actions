@@ -1,0 +1,12 @@
+name: Manual Trigger Workflow
+
+# Defines that this workflow is triggered manually
+on:
+  workflow_dispatch:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a message
+        run: echo "Hello, GitHub Actions!"
