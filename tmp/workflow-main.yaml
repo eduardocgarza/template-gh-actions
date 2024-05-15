@@ -1,0 +1,15 @@
+name: Main Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2 
+    - name: Log Message
+      run: |
+        echo "This is a Main Workflow"
+        echo "Running with Github Actions"
+

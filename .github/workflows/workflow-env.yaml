@@ -1,0 +1,19 @@
+name: Environment Stages
+
+on:
+  # Manual Trigger
+  workflow_dispatch:
+
+jobs:
+  Development:
+    runs-on: ubuntu-latest
+    environment: Env-Dev
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run Echo Script
+        run: echo "Running Development Environment"
+      - name: Echo Repository Variables
+        run: echo "Repository: ${{ variables.TEST_VAR }}"
+      - name: Echo Environment Variables
+        run: echo "Repository: ${{ Variables.TEST_VAR }}"
