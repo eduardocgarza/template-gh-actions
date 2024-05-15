@@ -12,4 +12,3 @@ jobs:
       - name: Run Echo Script
         run: |
           echo "Running Development Environment"
-          echo "Environment Name: ${{ secrets.TEST_VAR }}"
