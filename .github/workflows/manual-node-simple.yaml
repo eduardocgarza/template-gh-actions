@@ -25,5 +25,5 @@ jobs:
       - name: Run Script
         run: |
           echo "Ready to Start Node App"
-          npm run start
+          node .github/supplementary/node-simple/index.js
           echo "Node App Started"
